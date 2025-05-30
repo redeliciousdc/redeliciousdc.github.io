@@ -13,6 +13,14 @@ const globalStyles = css`
     box-sizing: border-box;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fff8f0;
@@ -20,8 +28,19 @@ const globalStyles = css`
     line-height: 1.6;
   }
 
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
+  }
+
+  /* Remove default iframe border */
+  iframe {
+    border: none;
   }
 `;
 

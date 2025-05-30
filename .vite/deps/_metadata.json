@@ -1,0 +1,67 @@
+{
+  "hash": "cfa26059",
+  "configHash": "2901e177",
+  "lockfileHash": "445dea5e",
+  "browserHash": "eeb243b9",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "c65e62c4",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "72852a3a",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "83f64dfb",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "6e1248b0",
+      "needsInterop": false
+    },
+    "@emotion/react": {
+      "src": "../../node_modules/@emotion/react/dist/emotion-react.browser.development.esm.js",
+      "file": "@emotion_react.js",
+      "fileHash": "8781f64d",
+      "needsInterop": false
+    },
+    "@emotion/styled": {
+      "src": "../../node_modules/@emotion/styled/dist/emotion-styled.browser.development.esm.js",
+      "file": "@emotion_styled.js",
+      "fileHash": "e8010b0f",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "ad938152",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ELNDXDY2": {
+      "file": "chunk-ELNDXDY2.js"
+    },
+    "chunk-35CNBUGZ": {
+      "file": "chunk-35CNBUGZ.js"
+    },
+    "chunk-J2EHARUD": {
+      "file": "chunk-J2EHARUD.js"
+    },
+    "chunk-74BVH4AN": {
+      "file": "chunk-74BVH4AN.js"
+    },
+    "chunk-UCCAB3TN": {
+      "file": "chunk-UCCAB3TN.js"
+    }
+  }
+}

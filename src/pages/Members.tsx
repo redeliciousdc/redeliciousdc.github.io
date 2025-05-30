@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 const MembersContainer = styled.div`
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  overflow-x: hidden;
 `;
 
 const Title = styled(motion.h1)`
@@ -95,4 +97,4 @@ const Members = () => {
   );
 };
 
-export default Members; 
+export default Members;

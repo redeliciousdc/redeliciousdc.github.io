@@ -2,6 +2,13 @@ import { Link, Outlet } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+`;
+
 const NavBar = styled.nav`
   background-color: #e05263;
   padding: 1rem;
@@ -30,9 +37,12 @@ const NavItem = styled(motion.li)`
 `;
 
 const MainContent = styled.main`
+  flex: 1;
+  width: 100%;
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  overflow-x: hidden;
 `;
 
 const Header = styled.header`
@@ -40,6 +50,7 @@ const Header = styled.header`
   color: white;
   padding: 2rem 1rem;
   background-color: #e05263;
+  width: 100%;
 `;
 
 const Title = styled.h1`
@@ -55,9 +66,16 @@ const Subtitle = styled.p`
   opacity: 0.9;
 `;
 
+const Footer = styled.footer`
+  text-align: center;
+  padding: 2rem;
+  background: #eee;
+  width: 100%;
+`;
+
 const Layout = () => {
   return (
-    <div>
+    <PageContainer>
       <Header>
         <Title>ReDelicious</Title>
         <Subtitle>DC's Food Lab Co-op</Subtitle>
@@ -81,10 +99,10 @@ const Layout = () => {
       <MainContent>
         <Outlet />
       </MainContent>
-      <footer style={{ textAlign: 'center', padding: '2rem', background: '#eee' }}>
+      <Footer>
         <p>© 2024 ReDelicious Co-op</p>
-      </footer>
-    </div>
+      </Footer>
+    </PageContainer>
   );
 };
 

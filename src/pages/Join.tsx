@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 const JoinContainer = styled.div`
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  overflow-x: hidden;
 `;
 
 const Title = styled(motion.h1)`
@@ -142,4 +144,4 @@ const Join = () => {
   );
 };
 
-export default Join; 
+export default Join;

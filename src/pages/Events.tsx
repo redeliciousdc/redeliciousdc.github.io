@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 const EventsContainer = styled.div`
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  overflow-x: hidden;
 `;
 
 const Title = styled(motion.h1)`
@@ -99,4 +101,4 @@ const Events = () => {
   );
 };
 
-export default Events; 
+export default Events;
