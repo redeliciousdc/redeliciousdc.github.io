@@ -1,16 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Metal+Mania&display=swap');
+
 body {
-  font-family: 'Helvetica', sans-serif;
-  background: #fff8f0;
+  font-family: 'Special Elite', Helvetica, sans-serif;
+  background: #fafafa;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #222;
 }
 
 header {
-  background: #af40d7;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
   color: white;
-  padding: 1em;
+  padding: 1em 0;
   text-align: center;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5em;
+}
+
+h1, h2 {
+  font-family: 'Metal Mania', cursive;
+  margin: 0.5em 0;
 }
 
 nav a {
@@ -22,10 +36,13 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+  color: #c1ff00;
 }
 
 main {
   padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 footer {
@@ -35,16 +52,18 @@ footer {
   margin-top: 2em;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   max-width: 500px;
   padding: 0.5em;
   margin-top: 0.5em;
   border: 1px solid #ccc;
+  font-family: 'Special Elite', Helvetica, sans-serif;
 }
 
 button {
-  background: #894de5;
+  background: #ff00cc;
   color: white;
   padding: 0.5em 1em;
   border: none;
