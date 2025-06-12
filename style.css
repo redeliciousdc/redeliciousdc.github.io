@@ -39,6 +39,12 @@ nav a:hover {
   color: #c1ff00;
 }
 
+.tagline {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
 main {
   padding: 2em;
   max-width: 800px;
