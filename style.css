@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Metal+Mania&display=swap');
 
 body {
-  font-family: 'Special Elite', Helvetica, sans-serif;
+  font-family: 'Titania', serif;
   background: #fafafa;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #590285;
 }
 
 header {
@@ -30,10 +30,11 @@ header {
 }
 
 h1 {
-  font-family: 'Metal Mania', cursive;
+  font-family: 'Titania', serif;
   margin: 0;
   font-size: 60px;
 }
+
 
 nav { 
   margin-bottom: 1em;
@@ -79,7 +80,7 @@ form textarea {
   padding: 0.5em;
   margin-top: 0.5em;
   border: 1px solid #ccc;
-  font-family: 'Special Elite', Helvetica, sans-serif;
+  font-family: 'Titania', serif;
 }
 
 button {
