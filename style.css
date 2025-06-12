@@ -11,19 +11,20 @@ body {
 header {
   background: linear-gradient(135deg, #2e5ab9, #8305bd);
   color: white;
-  padding: 0.3em 0;  /* reduce top/bottom padding */
   text-align: center;
+  padding-bottom: 1px;  
 }
 
 .header-top {
   display: flex;
   align-items: center;
-  justify-content: center; /* centers both logo and h1 horizontally */
-  gap: 20px; /* spacing between logo and text */
+  justify-content: center;
+  gap: 20px;
+  padding: 0em 0;
 }
 
 .logo {
-  width: 80px; /* adjust size to balance with text */
+  width: 100px; /* adjust size to balance with text */
   height: auto;
   margin: 0; /* remove extra margin since flex is handling spacing */
 }
@@ -34,12 +35,16 @@ h1 {
   font-size: 60px;
 }
 
+nav { 
+  margin-bottom: 1em;
+}
+
 nav a {
   margin: 0 1em;
   color: rgb(21, 190, 176);
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px
+  font-size: 24px;
 }
 
 nav a:hover {
@@ -90,13 +95,16 @@ button {
 }
 
 .subtagline {
-  font-size: 21px;
+  font-size: 41px;
+  font-weight: bold;
 }
 
 h2 {
-  font-size: 31px;
+  font-size: 24px;
+  margin: 0px;
 }
 
 p {
-  font-size: 25px;
+  font-size: 20px;
 }
+
