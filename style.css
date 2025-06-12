@@ -9,29 +9,37 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  background: linear-gradient(135deg, #2e5ab9, #8305bd);
   color: white;
-  padding: 2em 0;
+  padding: 0.3em 0;  /* reduce top/bottom padding */
   text-align: center;
 }
 
-.logo {
-  width: 120px;
-  height: auto;
-  display: block;
-  margin: 0 auto 0.5em;
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers both logo and h1 horizontally */
+  gap: 20px; /* spacing between logo and text */
 }
 
-h1, h2 {
+.logo {
+  width: 80px; /* adjust size to balance with text */
+  height: auto;
+  margin: 0; /* remove extra margin since flex is handling spacing */
+}
+
+h1 {
   font-family: 'Metal Mania', cursive;
-  margin: 0.5em 0;
+  margin: 0;
+  font-size: 60px;
 }
 
 nav a {
   margin: 0 1em;
-  color: white;
+  color: rgb(21, 190, 176);
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px
 }
 
 nav a:hover {
@@ -46,7 +54,7 @@ nav a:hover {
 }
 
 main {
-  padding: 2em;
+  padding: 1em;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -83,4 +91,12 @@ button {
 
 .subtagline {
   font-size: 21px;
+}
+
+h2 {
+  font-size: 31px;
+}
+
+p {
+  font-size: 25px;
 }
