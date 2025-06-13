@@ -50,30 +50,39 @@
   <footer>
     <p>© 2025 ReDelicious Co-op</p>
   </footer>
-  <script>
+ <script>
   const phrases = [
     "free food.",
-    "free food. good community.",
-    "free food. good community. on a farm.",
-    "free food. good community. on a farm. every sunday!",
+    "good community.",
+    "on a farm.",
+    "every sunday!",
   ];
 
   let currentPhrase = 0;
   const taglineEl = document.getElementById("tagline");
 
   function showNextPhrase() {
-    taglineEl.textContent = phrases[currentPhrase];
+    const phraseSpan = document.createElement("span");
+    phraseSpan.textContent = (currentPhrase > 0 ? " " : "") + phrases[currentPhrase];
+    phraseSpan.style.opacity = 0;
+    phraseSpan.style.transition = "opacity 0.8s ease";
+    taglineEl.appendChild(phraseSpan);
+
+    // Small delay ensures transition is applied correctly
+    setTimeout(() => {
+      phraseSpan.style.opacity = 1;
+    }, 50);
+
     currentPhrase++;
 
     if (currentPhrase < phrases.length) {
-      setTimeout(showNextPhrase, 750);
+      setTimeout(showNextPhrase, 780);
     }
   }
 
-  // Start the build
   showNextPhrase();
 </script>
-
+ 
 
 
 </body>
