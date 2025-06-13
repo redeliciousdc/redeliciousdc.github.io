@@ -26,7 +26,8 @@
 
   <main>
     <section>
-      <p class="subtagline"> food waste into delicious community</p>
+      
+      <p class="subtagline" id="tagline">food waste into delicious community</p>
       <h2>What We Do</h2>
       <p>ReDelicious is a food lab co-op transforming food waste into delicious, sustainable, and educational experiences. We host food preservation + fermentation workshops, community feasts, and mutual aid events throughout DC.</p>
       <h2>History of ReDelicious</h2>
@@ -37,5 +38,10 @@
   <footer>
     <p>© 2025 ReDelicious Co-op</p>
   </footer>
+  <script>
+  window.addEventListener("load", () => {
+    document.getElementById("tagline").classList.add("visible");
+  });
+</script>
 </body>
 </html>
