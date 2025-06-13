@@ -162,3 +162,67 @@ p {
 .venmo {
   background-color: #3D95CE;
 }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.product-card {
+  background: #fffdf7;
+  padding: 1em;
+  border: 3px dashed #ff00cc;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.product-image {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.product-card h3 {
+  font-family: 'Titania', serif;
+  font-size: 1.4em;
+  margin: 0.5em 0;
+}
+
+.product-card p {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #ff00cc;
+}
+
+.product-card button {
+  background: #ff00cc;
+  color: white;
+  border: none;
+  padding: 0.7em 1.5em;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1em;
+  transition: all 0.3s ease;
+}
+
+.product-card button:hover {
+  background: #ff0077;
+  transform: scale(1.1);
+}
+
