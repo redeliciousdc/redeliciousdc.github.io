@@ -47,8 +47,9 @@
 <header>
   <div class="header-top">
     <img src="ReDLogo6-25.svg" alt="ReDelicious logo" class="logo" />
-    <h1>Events</h1>
+    <h1 class="wiggle-title" id="wiggle-header" data-text="Events"></h1>
   </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -59,6 +60,7 @@
     <a href="shop.html">Shop</a>
   </nav>
 </header>
+
 
 <main>
   <p class="events-intro">✨ Check out what’s coming up✨</p>
@@ -75,6 +77,22 @@
 <footer>
   <p>© 2025 ReDelicious Co-op</p>
 </footer>
+<script>
+  function generateWiggleTitle(elementId) {
+    const el = document.getElementById(elementId);
+    const text = el.dataset.text;
+    el.innerHTML = '';
 
+    for (let char of text) {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      el.appendChild(span);
+    }
+  }
+
+  window.addEventListener('load', () => {
+    generateWiggleTitle('wiggle-header');
+  });
+</script>
 </body>
 </html>

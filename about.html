@@ -10,16 +10,17 @@
 <header>
   <div class="header-top">
     <img src="ReDLogo6-25.svg" alt="ReDelicious logo" class="logo" />
-    <h1>About ReDelicious</h1>
+    <h1 class="wiggle-title" id="wiggle-header" data-text="About Us"></h1>
   </div>
   
     <nav>
       <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
       <a href="calendar.html">Events</a>
       <a href="interest.html">Get Involved</a>
       <a href="members.html">Members</a>
       <a href="faq.html">FAQ</a>
-      <a href="community.html">Community Resources</a>
+      <a href="community.html">Resources</a>
       <a href="shop.html">Shop</a>
     </nav>
   </header>
@@ -41,6 +42,23 @@
   <script>
   window.addEventListener("load", () => {
     document.getElementById("tagline").classList.add("visible");
+  });
+</script>
+<script>
+  function generateWiggleTitle(elementId) {
+    const el = document.getElementById(elementId);
+    const text = el.dataset.text;
+    el.innerHTML = '';
+
+    for (let char of text) {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      el.appendChild(span);
+    }
+  }
+
+  window.addEventListener('load', () => {
+    generateWiggleTitle('wiggle-header');
   });
 </script>
 </body>

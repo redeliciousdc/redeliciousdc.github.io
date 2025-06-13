@@ -10,7 +10,7 @@
 <header>
   <div class="header-top">
     <img src="ReDLogo6-25.svg" alt="ReDelicious logo" class="logo" />
-    <h1>FAQ</h1>
+        <h1 class="wiggle-title" id="wiggle-header" data-text="FAQ"></h1>
   </div>
     <nav>
       <a href="index.html">Home</a>
@@ -18,7 +18,7 @@
       <a href="calendar.html">Events</a>
       <a href="interest.html">Get Involved</a>
       <a href="members.html">Members</a>
-      <a href="community.html">Community Resources</a>
+      <a href="community.html">Resources</a>
       <a href="shop.html">Shop</a>
     </nav>
   </header>
@@ -34,5 +34,24 @@
       <p>We hope to expand the region's food sovereignty by providing ongoing food education programming that is inherently social and radical. We eventually hope to open a public kitchen lab and cafe + community, art, and urban ag space in DC. We want to connect big ideas to real lives through food.</p>
     </section>
   </main>
+
+  <script>
+  function generateWiggleTitle(elementId) {
+    const el = document.getElementById(elementId);
+    const text = el.dataset.text;
+    el.innerHTML = '';
+
+    for (let char of text) {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      el.appendChild(span);
+    }
+  }
+
+  window.addEventListener('load', () => {
+    generateWiggleTitle('wiggle-header');
+  });
+</script>
+
 </body>
 </html>

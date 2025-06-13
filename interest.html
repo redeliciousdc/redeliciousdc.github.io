@@ -10,7 +10,8 @@
 <header>
   <div class="header-top">
     <img src="ReDLogo6-25.svg" alt="ReDelicious logo" class="logo" />
-    <h1>Join the Co-op</h1>
+<h1 class="wiggle-title" id="wiggle-header" data-text="Join the Co-op"></h1>
+
   </div>
 
   <nav>
@@ -19,7 +20,7 @@
     <a href="calendar.html">Events</a>
     <a href="members.html">Members</a>
     <a href="faq.html">FAQ</a>
-    <a href="community.html">Community Resources</a>
+    <a href="community.html">Resources</a>
     <a href="shop.html">Shop</a>
   </nav>
 </header>
@@ -55,6 +56,24 @@
   </form>
 
 </main>
+<script>
+  function generateWiggleTitle(elementId) {
+    const el = document.getElementById(elementId);
+    const text = el.dataset.text;
+    el.innerHTML = '';
 
+    for (let char of text) {
+      const span = document.createElement('span');
+      // If it's a space, preserve it
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      el.appendChild(span);
+    }
+  }
+
+  // Generate wiggle title on page load
+  window.addEventListener('load', () => {
+    generateWiggleTitle('wiggle-header');
+  });
+</script>
 </body>
 </html>
