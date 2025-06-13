@@ -13,6 +13,8 @@ header {
   color: white;
   text-align: center;
   padding-bottom: 1px;  
+  border-bottom: 5px solid #000000;
+  box-shadow: 0 20px 80px rgba(169, 13, 236, 0.4);
 }
 
 .header-top {
@@ -33,6 +35,8 @@ h1 {
   font-family: 'Titania', serif;
   margin: 0;
   font-size: 60px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px #000;
 }
 
 
@@ -42,15 +46,16 @@ nav {
 
 nav a {
   margin: 0 1em;
-  color: rgb(21, 190, 176);
+  color: #1cbfbc;
   text-decoration: none;
   font-weight: bold;
   font-size: 24px;
+  transition: all 0.6s ease;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: #c1ff00;
+  color: #e0b12f;
 }
 
 .tagline {
@@ -58,6 +63,7 @@ nav a:hover {
   font-weight: bold;
   margin: 1em 0;
   text-align: left;
+  font-family: 'Titania', serif;
 }
 
 main {
@@ -65,49 +71,66 @@ main {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 footer {
   text-align: center;
   padding: 1em;
   background: #eee;
   margin-top: 2em;
+  border-top: 5px solid #000000;
+  box-shadow: 0 -20px 80px rgba(169, 13, 236, 0.4);
 }
+
 
 form input,
 form textarea {
   width: 100%;
   max-width: 500px;
-  padding: 0.5em;
+  padding: 0.75em;
   margin-top: 0.5em;
-  border: 1px solid #ccc;
+  border: 2px dashed #b52081;
   font-family: 'Titania', serif;
+  background: #fffafc;
 }
 
 button {
-  background: #ff00cc;
+  background: #780561;
   color: white;
-  padding: 0.5em 1em;
+  padding: 0.7em 1.5em;
   border: none;
   margin-top: 1em;
   cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Titania', serif;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ea8715;
+  transform: scale(1.1);
 }
 
 .bio {
   margin-bottom: 2em;
+  
 }
 
 .subtagline {
   font-size: 41px;
   font-weight: bold;
+  font-family: 'Titania', serif;
 }
 
 h2 {
   font-size: 24px;
   margin: 0px;
+  font-family: 'Titania', serif;
 }
 
 p {
   font-size: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
 
 .donate-links {
@@ -119,20 +142,21 @@ p {
   display: inline-block;
   padding: 0.75em 1.5em;
   margin: 0.5em;
-  border-radius: 10px;
+  border-radius: 15px;
   text-decoration: none;
   font-weight: bold;
   color: white;
-  font-size: 20px;
-  transition: transform 0.2s ease;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
 }
 
 .donate-button:hover {
-  transform: scale(1.05);
+    transform: scale(1.1) rotate(-1deg);
 }
 
 .patreon {
-  background-color: #FF424D;
+  background-color: #de3b9a;
 }
 
 .venmo {
