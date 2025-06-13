@@ -77,7 +77,12 @@ nav a:hover {
   font-family: 'Titania', serif;
 }
 
-main { margin-top: 1em; }
+main {
+  max-width: 1100px;
+  margin: 1em auto;
+  padding: 0 1.5em;
+}
+
 
 footer {
   text-align: center;
