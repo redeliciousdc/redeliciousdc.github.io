@@ -46,7 +46,7 @@ nav {
 
 nav a {
   margin: 0 1em;
-  color: #1cbfbc;
+  color: #1ad399;
   text-decoration: none;
   font-weight: bold;
   font-size: 24px;
@@ -120,7 +120,17 @@ button:hover {
   font-size: 41px;
   font-weight: bold;
   font-family: 'Titania', serif;
+  color: #590285;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
+
+.subtagline.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 h2 {
   font-size: 24px;
@@ -173,7 +183,7 @@ p {
 .product-card {
   background: #fffdf7;
   padding: 1em;
-  border: 3px dashed #ff00cc;
+  border: 3px solid #9806c4;
   border-radius: 15px;
   text-align: center;
   box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
@@ -226,3 +236,12 @@ p {
   transform: scale(1.1);
 }
 
+.events-intro {
+  font-size: 2em;
+  font-weight: bold;
+  color: #8305bd;
+  text-align: center;
+  margin: 0em 0;
+  font-family: 'Titania', serif;
+  letter-spacing: 2px;
+}
