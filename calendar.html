@@ -86,11 +86,13 @@
 
     for (let char of text) {
       const span = document.createElement('span');
+      // If it's a space, preserve it
       span.textContent = char === ' ' ? '\u00A0' : char;
       el.appendChild(span);
     }
   }
 
+  // Generate wiggle title on page load
   window.addEventListener('load', () => {
     generateWiggleTitle('wiggle-header');
   });

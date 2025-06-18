@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Metal+Mania&display=swap');
 
+:root {
+  --rdmustard: #fad378;
+  --rdforestgreenn: #305C3e;
+  --rdlavender: #b8b8fa;
+  --rdSkyBlue: #ccfffe;
+  --rdPurpleDark: #3f0b5a;
+}
+
+
 body {
   font-family: 'Titania', serif;
-  background: linear-gradient(180deg, #b5eee4 50%, #9a3daa 100%);
+  background: linear-gradient(180deg, #ccfffe 50%, #9a3daa 100%);
   margin: 0;
   padding: 0;
-  color: #4c0072;
+  color: var(--rdPurpleDark);
   transition: background 1s ease;
 }
 
 header {
-  background: linear-gradient(135deg, #ad0b8d, #3f00ff);
+  background: linear-gradient(135deg, var(--rdPurpleDark), #3f0b5a);
   background-size: 400% 400%;
   animation: gradientShift 10s ease infinite;
   color: white;
@@ -57,7 +66,7 @@ h1 {
 
 nav a {
   margin: 0 0.65em;
-  color: #1ad399;
+  color: var(--rdSkyBlue);
   text-decoration: none;
   font-weight: bold;
   font-size: 24px;
@@ -66,7 +75,7 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
-  color: #e0b12f;
+  color: #fad378;
 }
 
 .tagline {
@@ -75,6 +84,7 @@ nav a:hover {
   margin: 1em 0;
   text-align: left;
   font-family: 'Titania', serif;
+  color: var(--rdPurpleDark);
 }
 
 main {
@@ -134,7 +144,7 @@ button:hover {
   font-size: 41px;
   font-weight: bold;
   font-family: 'Titania', serif;
-  color: #590285;
+  color: #3f0b5a;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
@@ -150,6 +160,7 @@ h2 {
   font-size: 24px;
   margin: 0px;
   font-family: 'Titania', serif;
+  color:#3f0b5a;;
 }
 
 
@@ -275,7 +286,7 @@ p {
   font-size: 60px;
   letter-spacing: 1.5px;
   text-shadow: 2px 2px #000;
-  color: white;
+  color: var(--rdSkyBlue);
 }
 
 /* Give each letter a slight animation offset */
@@ -288,8 +299,8 @@ p {
 
 @keyframes shroomWiggle {
   0% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-.15px) rotate(-.15deg); }
-  50% { transform: translateY(.15px) rotate(.15deg); }
-  75% { transform: translateY(-.15px) rotate(.15deg); }
-  100% { transform: translateY(0.15px) rotate(0.15deg); }
+  25% { transform: translateY(-.2px) rotate(-.2deg); }
+  50% { transform: translateY(.2px) rotate(.2deg); }
+  75% { transform: translateY(-.2px) rotate(.2deg); }
+  100% { transform: translateY(0.2px) rotate(0.2deg); }
 }
