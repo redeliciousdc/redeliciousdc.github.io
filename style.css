@@ -1,25 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Metal+Mania&display=swap');
 
+:root {
+  --rdmustard: #fad378;
+  --rdforestgreenn: #305C3e;
+  --rdlavender: #b8b8fa;
+  --rdSkyBlue: #ccfffe;
+  --rdPurpleDark: #3f0b5a;
+
+  --rdPurpleSecondary: #5528dc;
+  --rdPurpleThree: #8712c6;
+
+}
+
+
 body {
   font-family: 'Titania', serif;
-  background: linear-gradient(180deg, #b5eee4 50%, #9a3daa 100%);
+  background: linear-gradient(180deg, var(--rdSkyBlue) 30%, var(--rdlavender) 70%);
   margin: 0;
   padding: 0;
-  color: #4c0072;
+  color: var(--rdPurpleDark);
   transition: background 1s ease;
 }
 
 header {
-  background: linear-gradient(135deg, #ad0b8d, #3f00ff);
+  background: linear-gradient(135deg, var(--rdPurpleDark), var(--rdPurpleDark));
   background-size: 400% 400%;
   animation: gradientShift 10s ease infinite;
   color: white;
   text-align: center;
   padding: 2em 0 1em 0;
   border-bottom: 5px solid #000000;
-  box-shadow: 0 20px 80px rgba(169, 13, 236, 0.4);
   position: relative;
   overflow: hidden;
+  
 }
 
 @keyframes gradientShift {
@@ -57,7 +70,7 @@ h1 {
 
 nav a {
   margin: 0 0.65em;
-  color: #1ad399;
+  color: var(--rdlavender);
   text-decoration: none;
   font-weight: bold;
   font-size: 24px;
@@ -66,7 +79,7 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
-  color: #e0b12f;
+  color: #fad378;
 }
 
 .tagline {
@@ -75,6 +88,7 @@ nav a:hover {
   margin: 1em 0;
   text-align: left;
   font-family: 'Titania', serif;
+  color: var(--rdPurpleDark);
 }
 
 main {
@@ -91,7 +105,7 @@ footer {
   background: #eee;
   margin-top: 2em;
   border-top: 5px solid #000000;
-  box-shadow: 0 -20px 80px rgba(169, 13, 236, 0.4);
+
 }
 
 
@@ -134,7 +148,7 @@ button:hover {
   font-size: 41px;
   font-weight: bold;
   font-family: 'Titania', serif;
-  color: #590285;
+  color: #3f0b5a;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
@@ -150,6 +164,7 @@ h2 {
   font-size: 24px;
   margin: 0px;
   font-family: 'Titania', serif;
+  color: var(--rdPurpleDark);
 }
 
 
@@ -157,7 +172,9 @@ h3 {
   font-size: 25px;
   margin: 0px;
   font-family: 'Titania', serif;
-  line-height: 1; }
+  line-height: 1; 
+  color: var(--rdSkyBlue);
+}
 
 
 p {
@@ -188,12 +205,23 @@ p {
 }
 
 .patreon {
-  background-color: #de3b9a;
+  background-color: #e1178d;
+  transition: background-color 0.3s ease;
+}
+
+.patreon:hover {
+  background-color: #e84fa8; /* brighter or more vibrant pink */
 }
 
 .venmo {
   background-color: #3D95CE;
+  transition: background-color 0.3s ease;
 }
+
+.venmo:hover {
+  background-color: #63b7ee; /* lighter or more playful blue */
+}
+
 
 .product-grid {
   display: grid;
@@ -270,12 +298,12 @@ p {
 
 .wiggle-title span {
   display: inline-block;
-  animation: shroomWiggle 2s infinite ease-in-out;
+  animation: shroomWiggle .7s infinite ease-in-out;
   font-family: 'Titania', serif;
   font-size: 60px;
   letter-spacing: 1.5px;
   text-shadow: 2px 2px #000;
-  color: white;
+  color: var(--rdSkyBlue);
 }
 
 /* Give each letter a slight animation offset */
@@ -288,8 +316,41 @@ p {
 
 @keyframes shroomWiggle {
   0% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-.15px) rotate(-.15deg); }
-  50% { transform: translateY(.15px) rotate(.15deg); }
-  75% { transform: translateY(-.15px) rotate(.15deg); }
-  100% { transform: translateY(0.15px) rotate(0.15deg); }
+  25% { transform: translateY(-.5px) rotate(1deg); }
+  50% { transform: translateY(-.5px) rotate(1deg); }
+  75% { transform: translateY(-.5px) rotate(1deg); }
+  100% { transform: translateY(0.5px) rotate(1deg); }
 }
+
+#star-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  background: var(--rdmustard);
+  height: 2px;
+  border-radius: 2px;
+  opacity: 0.8;
+  box-shadow: 0 0 20px var(--rdmustard), 0 0 20px var(--rdmustard);
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(200px, 100px) scaleX(0.8);
+    opacity: 0;
+  }
+}
+
+
