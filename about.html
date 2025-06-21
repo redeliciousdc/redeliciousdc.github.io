@@ -42,83 +42,6 @@
   <p>© 2025 ReDelicious Co-op</p>
 </footer>
 
-<!-- === Shooting Stars Script === -->
-<script>
-  window.addEventListener("load", () => {
-    const container = document.getElementById("star-container");
-    const header = document.querySelector("header");
-
-    let lastMouseX = 0;
-    let lastMouseY = 0;
-    let throttle = false;
-
-    function createStar(x, y, dx = 1, dy = 1) {
-      const star = document.createElement("div");
-      star.classList.add("shooting-star");
-
-      const size = Math.random() * 1.3 + 1.6;
-      const duration = Math.random() * 1.5 + 1.5;
-
-      const angle = Math.atan2(dy, dx);
-      const distance = 300 + Math.random() * 400;
-
-      const translateX = Math.cos(angle) * distance;
-      const translateY = Math.sin(angle) * distance;
-
-      star.style.left = `${x}px`;
-      star.style.top = `${y}px`;
-      star.style.width = `${30 * size}px`;
-      star.style.height = `${2 + Math.random() * 20}px`;
-      star.style.transform = `rotate(${angle}rad)`;
-      star.style.background = `hsl(${Math.floor(Math.random() * 360)}, 60%, 80%)`;
-      star.style.opacity = 0.9;
-
-      const animName = `shoot-${Math.random().toString(36).substr(2, 6)}`;
-      star.style.animation = `${animName} ${duration}s ease-out forwards`;
-
-      const styleSheet = document.styleSheets[0];
-      const keyframes = `
-        @keyframes ${animName} {
-          0% {
-            transform: translate(0px, 0px) rotate(${angle}rad) scaleX(1);
-            opacity: 1;
-          }
-          100% {
-            transform: translate(${translateX}px, ${translateY}px) rotate(${angle}rad) scaleX(0.4);
-            opacity: 0;
-          }
-        }
-      `;
-      styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
-      container.appendChild(star);
-
-      setTimeout(() => {
-        star.remove();
-      }, duration * 1000);
-    }
-
-    header.addEventListener("mousemove", (e) => {
-      if (throttle) return;
-      throttle = true;
-
-      const dx = e.clientX - lastMouseX;
-      const dy = e.clientY - lastMouseY;
-      lastMouseX = e.clientX;
-      lastMouseY = e.clientY;
-
-      const bounds = header.getBoundingClientRect();
-      const x = e.clientX - bounds.left;
-      const y = e.clientY - bounds.top;
-
-      createStar(x, y, dx, dy);
-
-      setTimeout(() => {
-        throttle = false;
-      }, 90);
-    });
-  });
-</script>
-
 <!-- === Wiggle Title & Tagline Script === -->
 <script>
   window.addEventListener("load", () => {
@@ -135,6 +58,8 @@
     }
   });
 </script>
+
+<script src="shooting-stars.js"></script>
 
 </body>
 </html>
