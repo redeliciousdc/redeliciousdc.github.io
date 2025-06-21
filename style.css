@@ -1,20 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Metal+Mania&display=swap');
+@import url('https://fonts.cdnfonts.com/css/titania');
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
 :root {
   --rdmustard: #fad378;
   --rdforestgreenn: #305C3e;
   --rdlavender: #b8b8fa;
   --rdSkyBlue: #ccfffe;
-  --rdPurpleDark: #3f0b5a;
-
+  --rdPurpleDark: #310939;
   --rdPurpleSecondary: #5528dc;
   --rdPurpleThree: #8712c6;
+  --rdButtonColor: #ff0077;
 
+   /* Font families */
+  --headerFont: 'Titania', serif;
+  --bodyFont: 'Alice', serif;
 }
 
 
 body {
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   background: linear-gradient(180deg, var(--rdSkyBlue) 30%, var(--rdlavender) 70%);
   margin: 0;
   padding: 0;
@@ -26,10 +30,10 @@ header {
   background: linear-gradient(135deg, var(--rdPurpleDark), var(--rdPurpleDark));
   background-size: 400% 400%;
   animation: gradientShift 10s ease infinite;
-  color: white;
+  color: var(--rdSkyBlue);
   text-align: center;
   padding: 2em 0 1em 0;
-  border-bottom: 5px solid #000000;
+  border-bottom: 8px solid black;
   position: relative;
   overflow: hidden;
   
@@ -61,7 +65,7 @@ header {
   50% { transform: translateY(0px) rotate(.5deg); }
 }
 h1 {
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   margin: 0;
   font-size: 60px;
   letter-spacing: 1px;
@@ -79,7 +83,7 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
-  color: #fad378;
+  color: var(--rdmustard);
 }
 
 .tagline {
@@ -87,7 +91,7 @@ nav a:hover {
   font-weight: bold;
   margin: 1em 0;
   text-align: left;
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   color: var(--rdPurpleDark);
 }
 
@@ -102,9 +106,9 @@ main {
 footer {
   text-align: center;
   padding: 1em;
-  background: #eee;
+  background: var(--rdSkyBlue);
   margin-top: 2em;
-  border-top: 5px solid #000000;
+  border-top: 8px solid black;
 
 }
 
@@ -115,27 +119,27 @@ form textarea {
   max-width: 500px;
   padding: 0.75em;
   margin-top: 0.5em;
-  border: 2px dashed #b52081;
-  font-family: 'Titania', serif;
-  background: #fffafc;
+  border: 2px solid var(--rdPurpleDark);
+  font-family: var(--headerFont);
+  background: var(--rdSkyBlue);
 }
 
 button {
-  background: #780561;
-  color: white;
+  background: var(--rdPurpleThree);
+  color: var(--rdSkyBlue);
   padding: 0.7em 1.5em;
   border: none;
   margin-top: 1em;
   cursor: pointer;
   border-radius: 8px;
   font-weight: bold;
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   font-size: 1.2em;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #ea8715;
+  background: var(--rdmustard);
   transform: scale(1.1);
 }
 
@@ -147,8 +151,8 @@ button:hover {
 .subtagline {
   font-size: 41px;
   font-weight: bold;
-  font-family: 'Titania', serif;
-  color: #3f0b5a;
+  font-family: var(--headerFont);
+  color: var(--rdPurpleDark);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
@@ -163,7 +167,7 @@ button:hover {
 h2 {
   font-size: 24px;
   margin: 0px;
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   color: var(--rdPurpleDark);
 }
 
@@ -171,7 +175,7 @@ h2 {
 h3 {
   font-size: 25px;
   margin: 0px;
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   line-height: 1; 
   color: var(--rdSkyBlue);
 }
@@ -179,7 +183,7 @@ h3 {
 
 p {
   font-size: 20px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  font-family: var(--bodyFont) ;
 }
 
 .donate-links {
@@ -252,7 +256,7 @@ p {
 }
 
 .product-card h3 {
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   font-size: 1.4em;
   margin: 0.5em 0;
 }
@@ -269,7 +273,7 @@ p {
 }
 
 .product-card button {
-  background: #ff00cc;
+  background: var(--rdButtonColor);
   color: white;
   border: none;
   padding: 0.7em 1.5em;
@@ -282,7 +286,7 @@ p {
 }
 
 .product-card button:hover {
-  background: #ff0077;
+  background: var(--rdButtonColor);
   transform: scale(1.1);
 }
 
@@ -292,14 +296,14 @@ p {
   color: #8305bd;
   text-align: center;
   margin: 0em 0;
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   letter-spacing: 2px;
 }
 
 .wiggle-title span {
   display: inline-block;
   animation: shroomWiggle .7s infinite ease-in-out;
-  font-family: 'Titania', serif;
+  font-family: var(--headerFont);
   font-size: 60px;
   letter-spacing: 1.5px;
   text-shadow: 2px 2px #000;
@@ -316,10 +320,10 @@ p {
 
 @keyframes shroomWiggle {
   0% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-.5px) rotate(1deg); }
-  50% { transform: translateY(-.5px) rotate(1deg); }
-  75% { transform: translateY(-.5px) rotate(1deg); }
-  100% { transform: translateY(0.5px) rotate(1deg); }
+  25% { transform: translateY(-.3px) rotate(1deg); }
+  50% { transform: translateY(-.3px) rotate(1deg); }
+  75% { transform: translateY(-.3px) rotate(1deg); }
+  100% { transform: translateY(.3px) rotate(1deg); }
 }
 
 #star-container {
@@ -330,25 +334,44 @@ p {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
 }
 
 .shooting-star {
   position: absolute;
   background: var(--rdmustard);
-  height: 2px;
-  border-radius: 2px;
-  opacity: 0.8;
-  box-shadow: 0 0 20px var(--rdmustard), 0 0 20px var(--rdmustard);
+  height: 3px;
+  border-radius: 40px;
+  opacity: 0.9;
+  width: 80px;
+  box-shadow:
+    0 0 12px var(--rdlavender),
+    0 0 20px var(--rdPurpleThree),
+    0 0 40px var(--rdSkyBlue),
+    0 0 60px var(--rdmustard);
+  animation: shootPickle 5s cubic-bezier(0.6, 0.5, 0.3, 1) forwards;
 }
 
-@keyframes shoot {
+/* Psychedelic wandering animation */
+@keyframes shootPickle {
   0% {
-    transform: translate(0, 0) scaleX(1);
+    transform: translate(0, 0) rotate(0deg) scale(1);
     opacity: 1;
   }
+  25% {
+    transform: translate(50px, -20px) rotate(10deg) scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(120px, 40px) rotate(-5deg) scale(0.9);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(180px, 20px) rotate(15deg) scale(1.05);
+    opacity: 0.5;
+  }
   100% {
-    transform: translate(200px, 100px) scaleX(0.8);
+    transform: translate(300px, 100px) rotate(0deg) scale(0.8);
     opacity: 0;
   }
 }

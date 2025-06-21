@@ -8,6 +8,41 @@
   <link href="https://fonts.cdnfonts.com/css/titania" rel="stylesheet">
 </head>
 
+<body>
+<header>
+  <div id="star-container"></div>
+  <div class="header-top">
+    <img src="ReDLogo6-25.svg" alt="ReDelicious logo" class="logo" />
+    <h1 class="wiggle-title" id="wiggle-header" data-text="About Us"></h1>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="calendar.html">Events</a>
+    <a href="interest.html">Get Involved</a>
+    <a href="members.html">Members</a>
+    <a href="faq.html">FAQ</a>
+    <a href="community.html">Resources</a>
+    <a href="shop.html">Shop</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <p class="subtagline" id="tagline">food waste into delicious community</p>
+    <h2>What We Do</h2>
+    <p>ReDelicious is a food lab co-op transforming food waste into delicious, sustainable, and educational experiences. We host food preservation + fermentation workshops, community feasts, and mutual aid events throughout DC.</p>
+    <h2>History of ReDelicious</h2>
+    <p>Coming soon</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 ReDelicious Co-op</p>
+</footer>
+
+<!-- === Shooting Stars Script === -->
 <script>
   window.addEventListener("load", () => {
     const container = document.getElementById("star-container");
@@ -32,18 +67,15 @@
 
       star.style.left = `${x}px`;
       star.style.top = `${y}px`;
-      star.style.width = `${60 * size}px`;
-      star.style.height = `${2 + Math.random() * 2}px`;
+      star.style.width = `${30 * size}px`;
+      star.style.height = `${2 + Math.random() * 20}px`;
       star.style.transform = `rotate(${angle}rad)`;
-      star.style.background = `hsl(${Math.floor(Math.random() * 360)}, 50%, 90%)`;
+      star.style.background = `hsl(${Math.floor(Math.random() * 360)}, 60%, 80%)`;
       star.style.opacity = 0.9;
 
-      // Generate a unique animation name
       const animName = `shoot-${Math.random().toString(36).substr(2, 6)}`;
-
       star.style.animation = `${animName} ${duration}s ease-out forwards`;
 
-      // Dynamically create keyframes for this animation
       const styleSheet = document.styleSheets[0];
       const keyframes = `
         @keyframes ${animName} {
@@ -82,54 +114,17 @@
 
       setTimeout(() => {
         throttle = false;
-      }, 90); // faster but still throttled
+      }, 90);
     });
   });
 </script>
 
-
-<body>
-<header>
-  <div id="star-container"></div>
-  <div class="header-top">
-    <img src="ReDLogo6-25.svg" alt="ReDelicious logo" class="logo" />
-    <h1 class="wiggle-title" id="wiggle-header" data-text="About Us"></h1>
-  </div>
-  
-    <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="calendar.html">Events</a>
-    <a href="interest.html">Get Involved</a>
-    <a href="members.html">Members</a>
-    <a href="faq.html">FAQ</a>
-    <a href="community.html">Resources</a>
-    <a href="shop.html">Shop</a>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      
-      <p class="subtagline" id="tagline">food waste into delicious community</p>
-      <h2>What We Do</h2>
-      <p>ReDelicious is a food lab co-op transforming food waste into delicious, sustainable, and educational experiences. We host food preservation + fermentation workshops, community feasts, and mutual aid events throughout DC.</p>
-      <h2>History of ReDelicious</h2>
-      <p>Coming soon</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 ReDelicious Co-op</p>
-  </footer>
-  <script>
+<!-- === Wiggle Title & Tagline Script === -->
+<script>
   window.addEventListener("load", () => {
     document.getElementById("tagline").classList.add("visible");
-  });
-</script>
-<script>
-  function generateWiggleTitle(elementId) {
-    const el = document.getElementById(elementId);
+
+    const el = document.getElementById("wiggle-header");
     const text = el.dataset.text;
     el.innerHTML = '';
 
@@ -138,11 +133,8 @@
       span.textContent = char === ' ' ? '\u00A0' : char;
       el.appendChild(span);
     }
-  }
-
-  window.addEventListener('load', () => {
-    generateWiggleTitle('wiggle-header');
   });
 </script>
+
 </body>
 </html>
