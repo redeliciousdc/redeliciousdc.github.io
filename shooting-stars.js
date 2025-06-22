@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   const container = document.getElementById("star-container");
-  const header = document.querySelector("header");
+  const triggerArea = document.documentElement; // or document.documentElement for full page
+
 
   let lastMouseX = 0;
   let lastMouseY = 0;
@@ -11,18 +12,18 @@ window.addEventListener("load", () => {
     star.classList.add("shooting-star");
 
     const size = Math.random() * 1.2 + 1.2;
-    const duration = Math.random() * 1.5 + 2.3;
+    const duration = Math.random() * 2 + 4;
     const distance = 300 + Math.random() * 300;
     const angle = Math.atan2(dy, dx);
     const arcHeight = 100 + Math.random() * 200;
 
-    const endX = Math.cos(angle) * distance + (Math.random() - 0.5) * 60;
+    const endX = Math.cos(angle) * distance + (Math.random() - 0.5) * 20;
     const endY = Math.sin(angle) * distance + 100 + Math.random() * 100;
     const animName = `toss-${Math.random().toString(36).substr(2, 6)}`;
 
 
 // 🎯 Adjust pickle frequency (10% chance)
-const isPickle = Math.random() < 0.30;
+const isPickle = Math.random() < 0.3;
 const color = isPickle
   ? 'hsl(120, 97.30%, 29.40%)'  // pickle green
   : [
@@ -43,19 +44,24 @@ if (isPickle) {
   width = 50 + Math.random() * 15;   // 50–60 px
   height = 9 + Math.random() * 15;   // 10–12 px
 } else {
-  width = 30 + Math.random() * 60;   // 30–90 px
-  height = 10 + Math.random() * 35;  // 10–35 px
+  width = 80 + Math.random() * 110;   // 30–90 px
+  height = 80 + Math.random() * 110;  // 10–35 px
 }
 
 
-    star.style.left = `${x}px`;
-    star.style.top = `${y}px`;
+const offsetX = (Math.random() - 0.5) * 10; // ±10px
+const offsetY = (Math.random() - 0.5) * 10;
+
+star.style.left = `${x + offsetX}px`;
+star.style.top = `${y + offsetY}px`;
+star.style.transform = `rotate(${angle}rad)`; // Only rotation here
+
+
     star.style.width = `${width}px`;
     star.style.height = `${height}px`;
-    star.style.transform = `rotate(${angle}rad)`;
-    star.style.opacity = 0.8;
+    star.style.opacity = 0.5;
     star.style.borderRadius = isPickle ? '20px / 10px' : '50%';
-    star.style.filter = isPickle ? 'blur(.5px)' : 'blur(6px)';
+    star.style.filter = isPickle ? 'blur(.1px)' : 'blur(30px)';
     star.style.background = `radial-gradient(circle at center, ${color} 0%, #222 100%)`;
     star.style.boxShadow = isPickle
       ? `0 0 6px ${color}, 0 0 12px ${color}, 0 0 16px rgba(255,255,255,0.2)`
@@ -65,13 +71,19 @@ if (isPickle) {
 
     // 🌈 Create arc animation in 60 steps
     let keyframes = `@keyframes ${animName} {\n`;
-    for (let i = 0; i <= 60; i++) {
-      const progress = i / 60;
-      const tx = endX * progress;
-      const arcY = -4 * arcHeight * (progress - 0.5) ** 2 + arcHeight;
-      const ty = endY * progress - arcY;
-      const rot = angle + 0.03 * i;
-      const op = 1 - progress;
+    for (let i = 0; i <= 100; i++) {
+      const progress = i / 100; 
+  const tx = endX * progress;
+  const arcY = -2 * arcHeight * (progress - 0.5) ** 2 + arcHeight;
+  const ty = endY * progress - arcY;
+  const rot = angle + 0.002 * i;
+
+      //smoothing of pickle entry/exit  
+   // Smoother opacity easing: fade in slow, peak around middle, fade out
+  const fadeIn = Math.min(progress / 0.1, 1);         // fade in over 40%
+  const fadeOut = Math.max((1 - progress) / 0.9, 0);  // fade out over last 60%
+  const op = Math.min(fadeIn, fadeOut);               // peak around middle
+
       keyframes += `  ${Math.round(progress * 100)}% { transform: translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) rotate(${rot.toFixed(2)}rad); opacity: ${op.toFixed(2)}; }\n`;
     }
     keyframes += `}`;
@@ -84,7 +96,7 @@ if (isPickle) {
   }
 
   // 🖱 Mouse toss listener
-  header.addEventListener("mousemove", (e) => {
+  triggerArea.addEventListener("mousemove", (e) => {
     if (throttle) return;
     throttle = true;
 
@@ -93,14 +105,14 @@ if (isPickle) {
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
 
-    const bounds = header.getBoundingClientRect();
-    const x = e.clientX - bounds.left;
-    const y = e.clientY - bounds.top;
+const x = e.clientX;
+const y = e.clientY;
+
 
     createTossedPickle(x, y, dx, dy);
 
     setTimeout(() => {
       throttle = false;
-    }, 150);
+    }, 90); //speed of pickle toss
   });
 });
