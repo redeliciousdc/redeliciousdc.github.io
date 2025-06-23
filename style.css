@@ -120,8 +120,8 @@ main {
 footer {
   background: linear-gradient(0deg, var(--rdSkyBlue) 20%, transparent 100%);
   text-align: center;
-  padding: 2em;
-  margin-top: 2em;
+  padding: 4em;
+  margin-top: 0em;
   position: relative;
   z-index: 1;
 }
@@ -375,13 +375,9 @@ p {
 
 .shooting-star {
   position: fixed;
-  border-radius: 50px;
+  border-radius: 10px;
   filter: blur(10px);
-  background: radial-gradient(circle at center, #b80866 50%, #a3a3e9 10%);
-  box-shadow:
-   0 0 6px rgba(141, 23, 23, 0.327),
-    0 0 12px rgba(238, 167, 3, 0.682), /* var(--rdmustard) */
-    0 0 20px rgba(6, 160, 157, 0.985); /* var(--rdSkyBlue) */
+  background: radial-gradient(circle at center, #bdbdbd 60%, #a3a3e9 10%);
   pointer-events: none;
 }
 

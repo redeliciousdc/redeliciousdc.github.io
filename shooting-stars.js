@@ -12,10 +12,14 @@ window.addEventListener("load", () => {
     star.classList.add("shooting-star");
 
     const size = Math.random() * 1.2 + 1.2;
-    const duration = Math.random() * 1.5 + 2.3;
-    const distance = 300 + Math.random() * 300;
+    const duration = Math.random() * 1.7 + 2.5;
     const angle = Math.atan2(dy, dx);
-    const arcHeight = 100 + Math.random() * 200;
+    const arcHeight = 50 + Math.random() * 150;
+
+    const speed = Math.sqrt(dx * dx + dy * dy); // magnitude of mouse movement
+    const baseDistance = 200;
+    const velocityMultiplier = 5; // tweak this
+    const distance = Math.min(600, baseDistance + speed * velocityMultiplier + Math.random() * 50);
 
     const endX = Math.cos(angle) * distance + (Math.random() - 0.5) * 60;
     const endY = Math.sin(angle) * distance + 100 + Math.random() * 100;
@@ -23,16 +27,16 @@ window.addEventListener("load", () => {
 
 
 // 🎯 Adjust pickle frequency (10% chance)
-const isPickle = Math.random() < 0.30;
+const isPickle = Math.random() < 0.35;
 const color = isPickle
-  ? 'hsl(120, 97.30%, 29.40%)'  // pickle green
+  ? 'hsl(120, 47.60%, 44.10%)'  // pickle green
   : [
-      'hsl(260, 35.50%, 56.90%)',
-      'hsl(270, 36.00%, 43.50%)',
-      'hsl(240, 70%, 65%)',
-      'hsl(250, 92.20%, 30.00%)',
-      'hsl(244, 71.40%, 23.30%)',
-      'hsl(300, 94.80%, 22.70%)'
+      'hsla(261, 80.90%, 50.80%, 0.52)',
+      'hsla(172, 92.00%, 34.10%, 0.60)',
+      'hsl(264, 80.80%, 85.70%)',
+      'hsla(197, 99.20%, 48.00%, 0.58)',
+      'hsl(314, 88.60%, 86.30%)',
+      'hsla(300, 93.20%, 40.60%, 0.35)'
     ][Math.floor(Math.random() * 6)];
 
     // 🥒 Style shape by type
@@ -41,27 +45,26 @@ const color = isPickle
 let width, height;
 
 if (isPickle) {
-  width = 50 + Math.random() * 15;   // 50–60 px
+  width = 21 + Math.random() * 45;   // 50–60 px
   height = 9 + Math.random() * 15;   // 10–12 px
 } else {
-  width = 30 + Math.random() * 60;   // 30–90 px
-  height = 10 + Math.random() * 35;  // 10–35 px
+  width = 70 + Math.random() * 100;   // 30–90 px
+  height = 70 + Math.random() * 100;  // 10–35 px
 }
 
 
+
+    star.style.position = "absolute";  // or "fixed"
     star.style.left = `${x}px`;
     star.style.top = `${y}px`;
     star.style.width = `${width}px`;
     star.style.height = `${height}px`;
     star.style.transform = `rotate(${angle}rad)`;
-    star.style.opacity = 0.8;
-    star.style.borderRadius = isPickle ? '20px / 10px' : '50%';
-    star.style.filter = isPickle ? 'blur(.5px)' : 'blur(6px)';
+    star.style.opacity = .5;
+    star.style.borderRadius = isPickle ? '25% 25% 45% 45% / 40% 40% 60% 60%' : '50%';
+    star.style.filter = isPickle ? 'blur(.2px)' : 'blur(25px)';
     star.style.background = `radial-gradient(circle at center, ${color} 0%, #222 100%)`;
-    star.style.boxShadow = isPickle
-      ? `0 0 6px ${color}, 0 0 12px ${color}, 0 0 16px rgba(255,255,255,0.2)`
-      : `0 0 12px ${color}, 0 0 24px ${color}, 0 0 32px rgba(255,255,255,0.3)`;
-
+    star.style.zIndex = isPickle ? 2 : 1;
     star.style.animation = `${animName} ${duration}s ease-in-out forwards`;
 
     // 🌈 Create arc animation in 60 steps
@@ -71,7 +74,7 @@ if (isPickle) {
       const tx = endX * progress;
       const arcY = -4 * arcHeight * (progress - 0.4) ** 2 + arcHeight;
       const ty = endY * progress - arcY;
-      const rot = angle + 0.05 * i;
+      const rot = angle + 0.05 * i + (isPickle ? Math.sin(i / 5) * 0.2 : 0);
       
     const fadeIn = Math.min(progress / 0.1, 1);
     const fadeOut = Math.max((1 - progress) / 0.9, 0);
@@ -104,6 +107,6 @@ const y = e.clientY;
 
     setTimeout(() => {
       throttle = false;
-    }, 100);
+    }, 90);
   });
 });
