@@ -17,15 +17,6 @@
 }
 
 
-
-
-.page-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
 body {
   font-family: var(--headerFont);
   background: linear-gradient(180deg, var(--rdSkyBlue) 30%, var(--rdlavender) 70%);
@@ -129,7 +120,7 @@ main {
 footer {
   background: linear-gradient(0deg, var(--rdSkyBlue) 20%, transparent 100%);
   text-align: center;
-  padding: 4em;
+  padding: 1em;
   margin-top: 0em;
   position: relative;
   z-index: 1;
