@@ -402,36 +402,6 @@ p {
   pointer-events: none;
 }
 
-.two-column {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  margin: 2rem 0;
-}
-
-.column-text {
-  flex: 1 1 55%;
-  min-width: 250px;
-}
-
-.map-embed {
-  flex: 1 1 75%;
-  min-width: 200;
-  max-width: 300px;
-  height: 250px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 30px 25px rgba(0, 0, 0, 0.15);
-}
-
-.map-embed iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 12px;
-}
-
 
 .margin-shroom {
   position: absolute;
@@ -482,4 +452,96 @@ p {
   padding: 1.5rem;
 }
 
+
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.column-text {
+  flex: 1 1 55%;
+  min-width: 250px;
+}
+
+.map-column {
+  flex: 1 1 35%;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-callout {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  color: var(--rdPurpleDark);
+  position: relative;
+  z-index: 2;
+}
+
+.map-callout p {
+  margin: 0;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  margin: 0.2rem auto;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 20px solid var(--rdPurpleThree);
+}
+
+.map-embed {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 25px rgba(0, 0, 0, 0.15);
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.arrow-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0.2rem;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  border: solid var(--rdPurpleThree);
+  border-width: 0 6px 4px 0;
+  display: inline-block;
+  padding: 1px;
+  transform: rotate(45deg); /* Slanted down-right */
+  animation: arrowWiggle 1.6s ease-in-out infinite;
+}
+
+.arrow.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.arrow.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes arrowWiggle {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50%      { transform: rotate(45deg) translateY(4px); }
+}
 
