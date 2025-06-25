@@ -545,3 +545,26 @@ p {
   50%      { transform: rotate(45deg) translateY(4px); }
 }
 
+.interest-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border: 8px solid var(--rdPurpleThree);
+}
+
+/* Optional: Add soft padding behind iframe (won't affect form itself) */
+.form-container iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #fff;
+}
